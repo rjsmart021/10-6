@@ -1,4 +1,4 @@
-const apiKey = 'c7a8cfddc24b8ccbd0b5edb811abd9c0'; // Your public API key
+const apiKey = 'c7a8cfddc24b8ccbd0b5edb811abd9c0';
 const baseUrl = 'https://gateway.marvel.com/v1/public/characters';
 
 async function fetchMarvelCharacters() {
@@ -12,7 +12,7 @@ async function fetchMarvelCharacters() {
         const dataPromises = responses.map(response => response.json());
         const charactersData = await Promise.all(dataPromises);
         
-        const characters = charactersData.map(data => data.data.results[0]); // Get the first result for each character
+        const characters = charactersData.map(data => data.data.results[0]); 
         console.log(characters); // Log the characters to the console
         return characters;
     } catch (error) {
@@ -21,7 +21,7 @@ async function fetchMarvelCharacters() {
 }
 
 async function updateUIWithCharacters() {
-    const characters = await fetchMarvelCharacters(); // Fetch characters first
+    const characters = await fetchMarvelCharacters(); 
     const container = document.getElementById('characters-container');
 
     if (characters && characters.length > 0) {
